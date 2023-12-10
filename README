@@ -1,0 +1,30 @@
+On Ubuntu / Debian, this should install the dependencies :
+    ./script/install-debian-dependencies.bash
+
+The script is in :
+
+    bin/protohackers-1.pl
+
+    it has a --help describing it's CLI options.
+
+    run it like :
+        bin/protohackers-1.pl --strict-numeric --verbose
+
+    if you want it to listen to everything coming into the host :
+        bin/protohackers-1.pl --host 0.0.0.0 --strict-numeric --verbose
+
+    ( I needed to bind to 0.0.0.0 with my main router port forwarding to 9090
+      on my dev-laptop, and running the tests at the bottom of
+      https://protohackers.com/problem/1 )
+
+The main code is in :
+    ./lib/perl/ProtoHacker/Main.pm
+    ./lib/perl/ProtoHacker/Util.pm
+
+
+There is a very small test "suite" in t/
+
+    so , assuming you have the perl testing FW stuff installed :
+
+    prove t/
+
